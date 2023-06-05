@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4" 
+        xmlns:viewmodel="clr-namespace:WpfApp4.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="302" Width="243" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown" >
+    
+    <Grid PreviewMouseDown="Grid_PreviewMouseDown">
+        <DockPanel HorizontalAlignment="Center" Height="30" Margin="0,188,0,0" VerticalAlignment="Top" Width="207">
+            <Button Content="Button" Width="40" FontStyle="Normal" Click="Button_Click_1"/>
+            <Button Width="40" HorizontalAlignment="Right" Command="{Binding Login}">
+                <Image Source="/Resources/gifmaker_me.gif"/>
+            </Button>
+
+        </DockPanel>
+        <TextBox HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" Text="{Binding UserName}"/>
+        <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Text="{Binding UserPassword}"/>
+
+    </Grid>
+</Window>
